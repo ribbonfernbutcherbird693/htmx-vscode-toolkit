@@ -16,8 +16,8 @@
   <a href="https://marketplace.visualstudio.com/items?itemName=andreahlert.htmx-vscode-toolkit">
     <img src="https://img.shields.io/visual-studio-marketplace/r/andreahlert.htmx-vscode-toolkit?style=flat-square&label=Rating&color=3366CC" alt="Rating">
   </a>
-  <a href="https://github.com/andreahlert/htmx-vscode-toolkit/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/andreahlert/htmx-vscode-toolkit?style=flat-square&color=3366CC" alt="License">
+  <a href="https://github.com/atoolz/htmx-vscode-toolkit/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/atoolz/htmx-vscode-toolkit?style=flat-square&color=3366CC" alt="License">
   </a>
   <img src="https://img.shields.io/badge/HTMX-2.x-blue?style=flat-square&color=3366CC" alt="HTMX 2.x">
 </p>
@@ -157,7 +157,7 @@ Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guideli
 
 ```bash
 # Clone and install
-git clone https://github.com/andreahlert/htmx-vscode-toolkit.git
+git clone https://github.com/atoolz/htmx-vscode-toolkit.git
 cd htmx-vscode-toolkit
 npm install
 
