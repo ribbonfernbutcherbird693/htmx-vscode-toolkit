@@ -4,4 +4,5 @@ dist/
 .vscode-test/
 out/
 POSTS.md
-POSTS.md
+assets/promo-*.png
+assets/promo-*.svg
