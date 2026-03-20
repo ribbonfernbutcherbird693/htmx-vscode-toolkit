@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>HTMX Test</title></head>
+<body>
+    <div hx-get="/api/data" hx-target="#result" hx-swap="innerHTML">
+        Load Data
+    </div>
+    <button hx-post="/api/submit" hx-trigger="click" hx-confirm="Are you sure?">
+        Submit
+    </button>
+    <div hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="this">
+        Search
+    </div>
+    <!-- Invalid attributes for diagnostic tests -->
+    <div hx-gett="/typo" hx-swap="invalid_value" hx-boost="maybe">
+        Errors here
+    </div>
+    <div hx-ws="/socket" hx-sse="/events">
+        Deprecated
+    </div>
+    <div hx-on:click="handleClick()" hx-on:htmx:beforeRequest="loading()">
+        Events
+    </div>
+    <form hx-post="/submit" hx-ext="json-enc" hx-encoding="multipart/form-data">
+        Form
+    </form>
+    <div hx-get="/data" hx-history="false" hx-push-url="true">
+        History
+    </div>
+    <div hx-get="/data" hx-sync="closest form:abort" hx-params="*">
+        Sync
+    </div>
+</body>
+</html>

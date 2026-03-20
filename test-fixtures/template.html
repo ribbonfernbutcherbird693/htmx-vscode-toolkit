@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<div hx-get="{{ url_for('api') }}" hx-target="#result" hx-swap="innerHTML">
+    Template Test
+</div>
+{% endblock %}

@@ -1,0 +1,166 @@
+{
+  "name": "htmx-vscode-toolkit",
+  "displayName": "HTMX Toolkit",
+  "description": "Complete HTMX development toolkit: IntelliSense, hover docs, validation, diagnostics, and snippets for 20+ template languages",
+  "version": "0.1.0",
+  "publisher": "andreahlert",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreahlert/htmx-vscode-toolkit"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "htmx",
+    "html",
+    "intellisense",
+    "autocomplete",
+    "web"
+  ],
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:php",
+    "onLanguage:blade",
+    "onLanguage:django-html",
+    "onLanguage:jinja-html",
+    "onLanguage:jinja",
+    "onLanguage:gohtml",
+    "onLanguage:go-template",
+    "onLanguage:templ",
+    "onLanguage:astro",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:svelte",
+    "onLanguage:vue",
+    "onLanguage:vue-html",
+    "onLanguage:erb",
+    "onLanguage:twig",
+    "onLanguage:handlebars",
+    "onLanguage:ejs",
+    "onLanguage:nunjucks",
+    "onLanguage:razor",
+    "onLanguage:jade",
+    "onLanguage:pug"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "blade",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "django-html",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "jinja-html",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "gohtml",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "templ",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "astro",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "svelte",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "erb",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "twig",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "handlebars",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "ejs",
+        "path": "./snippets/htmx.json"
+      },
+      {
+        "language": "nunjucks",
+        "path": "./snippets/htmx.json"
+      }
+    ],
+    "configuration": {
+      "title": "HTMX IntelliSense",
+      "properties": {
+        "htmxIntelliSense.enableValidation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable diagnostics/validation for hx-* attributes"
+        },
+        "htmxIntelliSense.enableCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-completion for hx-* attributes"
+        },
+        "htmxIntelliSense.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover documentation for hx-* attributes"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "vsce package",
+    "lint": "tsc --noEmit",
+    "test": "tsc -p . && node ./dist/test/extension.test.js",
+    "test:e2e": "tsc -p . && node ./dist/test/runTest.js",
+    "vscode:prepublish": "node esbuild.js --production"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.5.2",
+    "esbuild": "^0.20.0",
+    "glob": "^13.0.6",
+    "mocha": "^11.7.5",
+    "typescript": "^5.3.0"
+  }
+}

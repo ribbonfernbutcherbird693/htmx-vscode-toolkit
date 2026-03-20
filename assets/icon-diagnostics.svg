@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#1e1e1e"/>
+  <!-- Warning triangle -->
+  <path d="M32 14 L50 46 L14 46 Z" fill="none" stroke="#e5c07b" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="32" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="18" font-weight="bold" fill="#e5c07b">!</text>
+  <!-- Squiggly line -->
+  <path d="M14,54 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3" fill="none" stroke="#f44747" stroke-width="1.5"/>
+</svg>

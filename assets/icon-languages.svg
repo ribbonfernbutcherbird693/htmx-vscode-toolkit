@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#1e1e1e"/>
+  <!-- Globe -->
+  <circle cx="32" cy="30" r="16" fill="none" stroke="#3366CC" stroke-width="2"/>
+  <ellipse cx="32" cy="30" rx="8" ry="16" fill="none" stroke="#3366CC" stroke-width="1.5" opacity="0.6"/>
+  <line x1="16" y1="30" x2="48" y2="30" stroke="#3366CC" stroke-width="1.5" opacity="0.6"/>
+  <line x1="32" y1="14" x2="32" y2="46" stroke="#3366CC" stroke-width="1.5" opacity="0.4"/>
+  <!-- Language dots -->
+  <circle cx="18" cy="52" r="3" fill="#569cd6" opacity="0.8"/>
+  <circle cx="28" cy="52" r="3" fill="#ce9178" opacity="0.8"/>
+  <circle cx="38" cy="52" r="3" fill="#6a9955" opacity="0.8"/>
+  <circle cx="48" cy="52" r="3" fill="#dcdcaa" opacity="0.8"/>
+</svg>
