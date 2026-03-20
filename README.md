@@ -31,7 +31,7 @@
 > Smart completions for all 27+ `hx-*` attributes with documentation and correct insert formatting.
 
 <p align="center">
-  <img src="assets/demo-completion.svg" alt="Attribute Completion Demo" width="700">
+  <img src="assets/demo-completion.gif" alt="Attribute Completion Demo" width="700">
 </p>
 
 ### Context-Aware Value Completions
@@ -39,7 +39,7 @@
 > Get value suggestions based on the attribute you're editing. Supports `hx-swap` strategies, `hx-trigger` events and modifiers, `hx-target` selectors, `hx-ext` extensions, and more.
 
 <p align="center">
-  <img src="assets/demo-values.svg" alt="Value Completion Demo" width="700">
+  <img src="assets/demo-values.gif" alt="Value Completion Demo" width="700">
 </p>
 
 ### Hover Documentation
@@ -47,7 +47,7 @@
 > Hover over any `hx-*` attribute to see a rich tooltip with description, valid values, modifiers, examples, and a link to official HTMX docs.
 
 <p align="center">
-  <img src="assets/demo-hover.svg" alt="Hover Documentation Demo" width="700">
+  <img src="assets/demo-hover.gif" alt="Hover Documentation Demo" width="700">
 </p>
 
 ### Diagnostics & Validation
@@ -55,7 +55,7 @@
 > Catch typos and invalid values before they reach the browser. Includes Levenshtein-based "did you mean?" suggestions and deprecated attribute warnings.
 
 <p align="center">
-  <img src="assets/demo-diagnostics.svg" alt="Diagnostics Demo" width="700">
+  <img src="assets/demo-diagnostics.gif" alt="Diagnostics Demo" width="700">
 </p>
 
 ### 20+ Template Languages
