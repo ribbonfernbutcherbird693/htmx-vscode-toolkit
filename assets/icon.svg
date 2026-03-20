@@ -1,31 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
-    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2952a3"/>
-      <stop offset="100%" style="stop-color:#3366CC"/>
-    </linearGradient>
-    <linearGradient id="iconShine" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
     </linearGradient>
   </defs>
-
-  <!-- Background rounded square -->
-  <rect width="128" height="128" rx="24" fill="url(#iconBg)"/>
-  <rect width="128" height="128" rx="24" fill="url(#iconShine)"/>
-
-  <!-- HTMX text -->
-  <text x="64" y="58" text-anchor="middle" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="36" font-weight="800" fill="#ffffff" letter-spacing="-1">
-    hx
-  </text>
-
-  <!-- Angle brackets around -->
-  <text x="14" y="62" font-family="'Cascadia Code', Consolas, monospace" font-size="30" fill="#ffffff" opacity="0.4">&lt;</text>
-  <text x="100" y="62" font-family="'Cascadia Code', Consolas, monospace" font-size="30" fill="#ffffff" opacity="0.4">/&gt;</text>
-
-  <!-- Lightning bolt (IntelliSense cue) -->
-  <path d="M72 68 L60 88 L68 88 L56 110 L80 82 L70 82 L82 68 Z" fill="#ffd700" opacity="0.9"/>
-
-  <!-- Subtle bottom accent -->
-  <rect x="24" y="116" width="80" height="2" rx="1" fill="#ffffff" opacity="0.3"/>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <rect x="1" y="1" width="126" height="126" rx="23" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.3"/>
+  <text x="64" y="64" text-anchor="middle" dominant-baseline="central" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="700" fill="#ffffff" letter-spacing="-2">hx</text>
 </svg>
