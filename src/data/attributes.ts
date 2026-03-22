@@ -332,7 +332,6 @@ export const htmxAttributes: Map<string, HtmxAttribute> = new Map([
     description: 'Specifies the element to snapshot and restore when navigating history. By default the body is used. This allows you to use a smaller element for history snapshots.',
     docsUrl: 'https://htmx.org/attributes/hx-history-elt/',
     since: '1.0.0',
-    deprecated: true,
   }],
 
   // ── Validation ─────────────────────────────────────────

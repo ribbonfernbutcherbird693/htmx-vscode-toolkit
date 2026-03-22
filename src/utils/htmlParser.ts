@@ -78,31 +78,34 @@ function isInComment(textBefore: string): boolean {
 }
 
 /**
- * Checks if the cursor is inside a script or style tag.
+ * Checks if the cursor is inside the content of a script or style tag.
+ * Returns false when the cursor is inside the opening tag's attributes
+ * (where hx-* attributes are valid, e.g. <script hx-get="...">).
  */
 function isInScriptOrStyle(textBefore: string): boolean {
-  const scriptOpen = textBefore.lastIndexOf('<script');
-  const scriptClose = textBefore.lastIndexOf('</script');
-  if (scriptOpen > scriptClose && scriptOpen !== -1) {
-    // We might be in the script tag attributes (which is fine) or in script content
-    const afterScriptTag = textBefore.substring(scriptOpen);
-    const closingBracket = afterScriptTag.indexOf('>');
-    if (closingBracket !== -1 && scriptOpen + closingBracket < textBefore.length) {
-      return true;
-    }
+  return isInsideTagContent(textBefore, 'script') || isInsideTagContent(textBefore, 'style');
+}
+
+function isInsideTagContent(textBefore: string, tagName: string): boolean {
+  const openTag = textBefore.lastIndexOf(`<${tagName}`);
+  const closeTag = textBefore.lastIndexOf(`</${tagName}`);
+
+  if (openTag === -1 || openTag < closeTag) {
+    return false;
   }
 
-  const styleOpen = textBefore.lastIndexOf('<style');
-  const styleClose = textBefore.lastIndexOf('</style');
-  if (styleOpen > styleClose && styleOpen !== -1) {
-    const afterStyleTag = textBefore.substring(styleOpen);
-    const closingBracket = afterStyleTag.indexOf('>');
-    if (closingBracket !== -1 && styleOpen + closingBracket < textBefore.length) {
-      return true;
-    }
+  // Find the closing > of the opening tag
+  const afterTag = textBefore.substring(openTag);
+  const closingBracket = afterTag.indexOf('>');
+
+  if (closingBracket === -1) {
+    // Still inside the opening tag's attributes, not in content
+    return false;
   }
 
-  return false;
+  // Cursor is after the opening tag's > so we're inside tag content
+  const contentStart = openTag + closingBracket + 1;
+  return contentStart < textBefore.length;
 }
 
 /**

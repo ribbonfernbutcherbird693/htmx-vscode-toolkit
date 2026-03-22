@@ -65,8 +65,8 @@ export class HtmxCompletionProvider implements vscode.CompletionItemProvider {
       const item = new vscode.CompletionItem(fullName, vscode.CompletionItemKind.Property);
 
       // Insert the attribute with = and quotes
-      if (fullName === 'hx-disable' || fullName === 'hx-preserve') {
-        // Boolean attributes without values
+      if (fullName === 'hx-disable') {
+        // Boolean attribute without value
         item.insertText = new vscode.SnippetString(`${fullName}`);
       } else {
         item.insertText = new vscode.SnippetString(`${fullName}="$1"$0`);

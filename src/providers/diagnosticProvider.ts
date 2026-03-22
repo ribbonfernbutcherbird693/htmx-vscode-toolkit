@@ -5,6 +5,7 @@ import {
   htmxAttributes,
 } from '../data/attributes';
 import { findHtmxAttributes, AttributeOccurrence } from '../utils/htmlParser';
+import { isSupportedDocument } from '../utils/languageSupport';
 
 /** All known hx-* attribute names (without the hx- prefix check for hx-on:*) */
 const knownAttributeNames = new Set<string>(htmxAttributes.keys());
@@ -38,6 +39,11 @@ export class HtmxDiagnosticProvider implements vscode.Disposable {
    * Runs all diagnostic checks on the given document.
    */
   updateDiagnostics(document: vscode.TextDocument): void {
+    if (!isSupportedDocument(document)) {
+      this.diagnosticCollection.delete(document.uri);
+      return;
+    }
+
     const config = vscode.workspace.getConfiguration('htmxIntelliSense');
     if (!config.get<boolean>('enableValidation', true)) {
       this.diagnosticCollection.delete(document.uri);
@@ -118,11 +124,9 @@ export class HtmxDiagnosticProvider implements vscode.Disposable {
 
     let message = `"${occ.name}" is deprecated.`;
     if (occ.name === 'hx-ws') {
-      message += ' Use the WebSocket extension (hx-ext="ws") instead.';
+      message += ' Use the WebSocket extension (hx-ext="ws") with ws-connect instead.';
     } else if (occ.name === 'hx-sse') {
-      message += ' Use the SSE extension (hx-ext="sse") instead.';
-    } else if (occ.name === 'hx-history-elt') {
-      message += ' Use hx-history instead.';
+      message += ' Use the SSE extension (hx-ext="sse") with sse-connect instead.';
     }
 
     const diag = new vscode.Diagnostic(
@@ -285,25 +289,32 @@ export class HtmxDiagnosticProvider implements vscode.Disposable {
 
 /**
  * Computes the Levenshtein edit distance between two strings.
+ * Uses a two-row rolling array to minimize allocations.
  */
 function levenshtein(a: string, b: string): number {
   const m = a.length;
   const n = b.length;
-  const dp: number[][] = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
 
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  if (m === 0) return n;
+  if (n === 0) return m;
+
+  let prev = new Array(n + 1);
+  let curr = new Array(n + 1);
+
+  for (let j = 0; j <= n; j++) prev[j] = j;
 
   for (let i = 1; i <= m; i++) {
+    curr[0] = i;
     for (let j = 1; j <= n; j++) {
       const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-      dp[i][j] = Math.min(
-        dp[i - 1][j] + 1,
-        dp[i][j - 1] + 1,
-        dp[i - 1][j - 1] + cost
+      curr[j] = Math.min(
+        prev[j] + 1,
+        curr[j - 1] + 1,
+        prev[j - 1] + cost
       );
     }
+    [prev, curr] = [curr, prev];
   }
 
-  return dp[m][n];
+  return prev[n];
 }
